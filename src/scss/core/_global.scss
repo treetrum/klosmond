@@ -14,3 +14,18 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.link-text {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(black, .5);
+
+    &.active {
+        color: black;
+    }
+
+    &:hover {
+        color: black;
+    }
+}

@@ -4,4 +4,27 @@
 @import './core/grid';
 @import './core/mixins';
 
-@import './components/nav'
+@import './components/nav';
+
+.portfolio-grid {
+    .grid-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: $padding;
+
+        @include breakpoint(sm) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: $padding/2;
+        }
+
+        .grid-item {    
+            img {
+                border: 1px solid hsl(0, 0, 95%);
+                width: 100%;
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
