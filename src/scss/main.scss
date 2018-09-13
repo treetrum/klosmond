@@ -1,0 +1,10 @@
+@import '../../node_modules/normalize.css/normalize';
+
+$max_width: 1200px;
+
+.container {
+    width: 100%;
+    max-width: $max_width;
+    margin: 0 auto;
+    background-color: red;
+}
