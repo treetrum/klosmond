@@ -1,10 +1,7 @@
 @import '../../node_modules/normalize.css/normalize';
 
-$max_width: 1200px;
+@import './core/global';
+@import './core/grid';
+@import './core/mixins';
 
-.container {
-    width: 100%;
-    max-width: $max_width;
-    margin: 0 auto;
-    background-color: red;
-}
+@import './components/nav'

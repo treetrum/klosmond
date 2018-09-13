@@ -1,0 +1,75 @@
+.nav {
+    padding: 80px 0;
+
+    @include breakpoint(sm) {
+        padding: 20px 0;
+    }
+
+    .nav-items {
+        display: flex;
+
+        @include breakpoint(sm) {
+            justify-content: center;
+            flex-wrap: wrap;
+
+            & > * {
+                width: 100%;
+            }
+        }
+
+        .nav-item {
+
+            display: flex;
+            align-items: center;
+
+            &.toggler {
+                display: none;
+                justify-content: center;
+                margin-bottom: 40px;
+                text-transform: uppercase;
+                color: rgba(black, .5);
+                cursor: pointer;
+                
+                @include breakpoint(sm) {
+                    display: flex;
+                }
+            }
+
+            &.logo {
+                flex-grow: 1;
+                
+                @include breakpoint(sm) {
+                    justify-content: center;
+                }
+
+                img {
+                    height: 60px;
+                }
+            }
+
+            &.links {
+
+                @include breakpoint(sm) {
+                    display: none;
+                }
+
+                li {
+                    display: block;
+
+                    a {
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        display: block;
+                        padding: 1rem;
+                        color: rgba(black, .5);
+
+                        &.active {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
