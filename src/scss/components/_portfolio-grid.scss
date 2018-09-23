@@ -8,11 +8,11 @@
     .grid-items {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: $padding;
+        grid-gap: $grid_padding;
 
         @include breakpoint(sm) {
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: $padding/2;
+            grid-gap: $grid_padding / 2;
         }
     }
 }

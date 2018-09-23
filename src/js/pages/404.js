@@ -1,11 +1,10 @@
 import React from 'react';
+import ContentPage from '../templates/ContentPage';
 
 export default () => {
     return (
-        <article>
-            <div className="container">
-                <p>Page not found.</p>
-            </div>
-        </article>
+        <ContentPage title="Error 404">
+            <p>Page not found</p>
+        </ContentPage>
     );
 };
