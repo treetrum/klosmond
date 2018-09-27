@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import exampleImage from '../../images/work-example.jpeg';
+import exampleImage from '../../images/work-example.jpg';
 
 export default ({ i }) => {
     return (
