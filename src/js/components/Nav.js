@@ -30,7 +30,7 @@ export default () => {
                             </NavLink>
                         </li>
                         <li>
-                            <a href="#instagram" className="link-text">
+                            <a href="https://www.instagram.com/_katylou/" target="_blank" className="link-text">
                                 <i className="fab fa-instagram" />
                             </a>
                         </li>
