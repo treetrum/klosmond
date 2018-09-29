@@ -30,7 +30,12 @@ export default () => {
                             </Link>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/_katylou/" target="_blank" className="link-text">
+                            <a
+                                href="https://www.instagram.com/_katylou/"
+                                target="_"
+                                rel="noopener noreferrer"
+                                className="link-text"
+                            >
                                 <i className="fab fa-instagram" />
                             </a>
                         </li>
