@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../../images/logo.png';
-import { NavLink } from 'react-router-dom';
+import Logo from '../images/logo.png';
+import { Link } from 'gatsby';
 
 export default () => {
     return (
@@ -9,25 +9,25 @@ export default () => {
                 <div className="nav-items">
                     <div className="nav-item toggler">menu</div>
                     <div className="nav-item logo">
-                        <NavLink to="/">
+                        <Link to="/">
                             <img src={Logo} alt="" />
-                        </NavLink>
+                        </Link>
                     </div>
                     <div className="nav-item links">
                         <li>
-                            <NavLink exact to="/" className="link-text">
+                            <Link activeClassName="active" to="/" className="link-text">
                                 Portfolio
-                            </NavLink>
+                            </Link>
                         </li>
                         <li>
-                            <NavLink to="/about" className="link-text">
+                            <Link activeClassName="active" to="/about" className="link-text">
                                 About
-                            </NavLink>
+                            </Link>
                         </li>
                         <li>
-                            <NavLink to="/contact" className="link-text">
+                            <Link activeClassName="active" to="/contact" className="link-text">
                                 Contact
-                            </NavLink>
+                            </Link>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/_katylou/" target="_blank" className="link-text">
