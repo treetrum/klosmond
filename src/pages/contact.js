@@ -5,7 +5,7 @@ import ContentPage from '../templates/ContentPage';
 const IndexPage = () => (
     <Layout>
         <ContentPage title="Contact">
-            <form netlify>
+            <form name="contact" method="POST" netlify>
                 <div className="form-input">
                     <label htmlFor="name">Name</label>
                     <input name="name" type="text" placeholder="Jane" />
