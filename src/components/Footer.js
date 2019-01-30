@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 export default () => {
-  return (
-    <footer><div className="container">
-      Copyright 2018
-    </div></footer>
-  )
-}
+	return (
+		<footer>
+			<div className="container">Copyright 2018</div>
+		</footer>
+	);
+};

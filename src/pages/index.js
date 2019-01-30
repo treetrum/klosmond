@@ -1,12 +1,12 @@
-import React from 'react'
-import PortfolioGrid from '../components/PortfolioGrid'
+import React from 'react';
+import PortfolioGrid from '../components/PortfolioGrid';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const IndexPage = () => (
-  <Layout>
-    <PortfolioGrid />
-  </Layout>
-)
+	<Layout>
+		<PortfolioGrid />
+	</Layout>
+);
 
-export default IndexPage
+export default IndexPage;
