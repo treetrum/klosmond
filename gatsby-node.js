@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
 		res.data.allMarkdownRemark.edges.forEach(({ node }) => {
 			const slug = node.frontmatter.slug;
 			createPage({
-				path: `project/${slug}`,
+				path: slug,
 				component: projectTemplate,
 				context: {
 					slug
