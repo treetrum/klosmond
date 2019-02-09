@@ -3,9 +3,7 @@ title: Cockatoo Island
 slug: cockatoo-island
 tag: Print / Signage / Wayfinding
 order: 2
-thumbnail: './work-example.jpg'
-images:
-    - './work-example.jpg'
+thumbnail: './cockatoo-island.jpg'
 ---
 
 A comprehensive signage and wayfinding project aiming to help visitors find their way from a temporary wharf while the island's main wharf receives an upgrade.

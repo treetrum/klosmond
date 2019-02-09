@@ -3,6 +3,7 @@ title: Between Here & Somewhere Else
 slug: between-here-&-somewhere-else
 tag: ILLUSTRATION
 order: 6
+thumbnail: './bhase.jpg'
 ---
 
 Between Here & Somewhere Else is a collage designed for Our Hands Zine, a quarterly university based publication that explores different illustrative techniques each issue.
