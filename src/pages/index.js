@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PortfolioGrid from '../components/PortfolioGrid';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => {
 	const projects = data.allMarkdownRemark.edges.map(({ node }) => node);
