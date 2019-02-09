@@ -1,13 +1,15 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
-import exampleImage from '../images/work-example.jpg';
-
-export default ({ i }) => {
+export default ({ project, i }) => {
+	const { title, slug, thumbnail } = project.frontmatter;
+	const thumbURL = thumbnail ? thumbnail.publicURL : 'http://placehold.it/500';
 	return (
-		<div to="/project/something" className="portfolio-tile">
-			<img src={exampleImage} alt="" />
-			<p className="link-text">Title of work</p>
-		</div>
+		<Link to={`/project/${slug}`} className="portfolio-tile">
+			<div className="portfolio-tile__thumb">
+				<img src={thumbURL} alt="" />
+			</div>
+			<p className="link-text">{title}</p>
+		</Link>
 	);
 };

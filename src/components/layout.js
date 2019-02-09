@@ -31,10 +31,7 @@ const Layout = ({ children }) => (
 						integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 						crossorigin="anonymous"
 					/>
-					<link
-						href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i"
-						rel="stylesheet"
-					/>
+					<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,700,700i" rel="stylesheet" />
 					<title>{data.site.siteMetadata.title}</title>
 				</Helmet>
 				<Nav />

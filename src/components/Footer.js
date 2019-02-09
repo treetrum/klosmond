@@ -1,9 +1,15 @@
 import React from 'react';
+import format from 'date-fns/format';
 
-export default () => {
+const Footer = () => {
+	const currentYear = format(new Date(), 'YYYY');
 	return (
-		<footer>
-			<div className="container">Copyright 2018</div>
+		<footer className="footer">
+			<div className="container">
+				<p>Katy Omsond &copy; Copyright {currentYear}. All rights reserved</p>
+			</div>
 		</footer>
 	);
 };
+
+export default Footer;

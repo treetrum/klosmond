@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import ContentPage from '../templates/ContentPage';
 
 import portrait from '../images/portrait.jpg';
 
-const IndexPage = () => (
+const About = () => (
 	<Layout>
 		<ContentPage title="About" hideTitle>
 			<div className="row">
@@ -12,7 +12,7 @@ const IndexPage = () => (
 					<img src={portrait} alt="Katy Osmond" />
 				</div>
 				<div className="medium-6 large-4 columns">
-					<h1 className="page-title">About</h1>
+					<h1 className="priority-1">About</h1>
 					<p>
 						Katy Osmond is a Sydney based graphic designer who works with both digital and hand based
 						mediums, intertwining the both to enhance her work, and explore different techniques.
@@ -33,4 +33,4 @@ const IndexPage = () => (
 	</Layout>
 );
 
-export default IndexPage;
+export default About;
