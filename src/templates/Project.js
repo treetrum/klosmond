@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
 
-export default ({ data }) => {
+const Project = ({ data }) => {
 	const project = data.markdownRemark;
 	const { title, tag, images } = project.frontmatter;
 	return (
@@ -13,19 +14,21 @@ export default ({ data }) => {
 					{title} | {data.site.siteMetadata.title}
 				</title>
 			</Helmet>
-			<div className="container">
-				<div className="row">
-					{images && (
-						<div className="medium-8 columns">
-							{images.map(({ publicURL }) => (
-								<img src={publicURL} alt="" style={{ width: '100%' }} />
-							))}
+			<div className="project-page">
+				<div className="container">
+					<div className="row">
+						<div className={`small-12 medium-${images ? 4 : 8} columns content-col`}>
+							<h1 className="priority-1">{title}</h1>
+							<p className="tag">{`// ${tag}`}</p>
+							<div className="rte" dangerouslySetInnerHTML={{ __html: project.html }} />
 						</div>
-					)}
-					<div className={`medium-${images ? 4 : 8} columns`}>
-						<h1 className="priority-1">{title}</h1>
-						<p className="tag">{`// ${tag}`}</p>
-						<div className="rte" dangerouslySetInnerHTML={{ __html: project.html }} />
+						{images && (
+							<div className="small-12 medium-8 columns image-col">
+								{images.map(({ childImageSharp, id }) => (
+									<Img key={id} fluid={childImageSharp.fluid} />
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
@@ -42,7 +45,12 @@ export const singleProjectQuery = graphql`
 				title
 				tag
 				images {
-					publicURL
+					id
+					childImageSharp {
+						fluid(maxWidth: 1560, quality: 100) {
+							...GatsbyImageSharpFluid
+						}
+					}
 				}
 			}
 		}
@@ -53,3 +61,5 @@ export const singleProjectQuery = graphql`
 		}
 	}
 `;
+
+export default Project;

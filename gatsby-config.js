@@ -13,6 +13,7 @@ module.exports = {
 				path: `${__dirname}/projects/`
 			}
 		},
+		'gatsby-transformer-sharp',
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-transformer-remark`,
