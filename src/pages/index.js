@@ -32,7 +32,7 @@ export const indexQuery = graphql`
 						order
 						thumbnail {
 							childImageSharp {
-								fluid(maxWidth: 350, quality: 100) {
+								fluid(maxWidth: 700, quality: 100) {
 									...GatsbyImageSharpFluid
 								}
 							}
