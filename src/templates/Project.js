@@ -18,9 +18,11 @@ const Project = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className={`small-12 medium-${images ? 4 : 8} columns content-col`}>
-							<h1 className="priority-1">{title}</h1>
-							<p className="tag">{`// ${tag}`}</p>
-							<div className="rte" dangerouslySetInnerHTML={{ __html: project.html }} />
+							<article>
+								<h1 className="priority-1">{title}</h1>
+								<p className="tag">{`// ${tag}`}</p>
+								<div className="rte" dangerouslySetInnerHTML={{ __html: project.html }} />
+							</article>
 						</div>
 						{images && (
 							<div className="small-12 medium-8 columns image-col">
