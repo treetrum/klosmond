@@ -4,6 +4,10 @@ slug: satsuma
 tag: DIGITAL / BRANDING / CREATIVE DIRECTION
 order: 3
 thumbnail: './satsuma.jpg'
+images:
+    - './satsuma-01.jpg'
+    - './satsuma-02.jpg'
+    - './satsuma-03.jpg'
 ---
 
 The creative direction behind the home page is centred around Satsuma's logo, an orange dot. This is represented with a ping pong ball acting as the device of cause and effect for the brand. Three still life concepts were produced as feature images.

@@ -1,7 +1,6 @@
 $grid_column_count: 12;
-$grid_max_width: 1200px;
-$grid_padding: 30px;
-$grid_column_gutter: 30px;
+$grid_max_width: 1280px;
+$grid_column_gutter: 45px;
 $grid_breakpoints: (small: 0,
 medium: 48rem,
 large: 64rem,
@@ -10,7 +9,7 @@ xxlarge: 105rem);
 
 @mixin breakpoint($breakpoint) {
     @if map-has-key($grid_breakpoints, $breakpoint) {
-        @media (min-width: #{map-get($grid_breakpoints, $breakpoint)}) {
+        @media (min-width: #{map-get($grid_breakpoints, $breakpoint) + (1rem/16)}) {
             @content;
         }
     }
@@ -30,26 +29,25 @@ xxlarge: 105rem);
     width: 100%;
     max-width: $grid_max_width;
     margin: 0 auto;
-    padding: 0 $grid_padding;
+    padding: 0 $grid_column_gutter / 2;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    margin-left: -($grid_column_gutter / 2);
-    margin-right: -($grid_column_gutter / 2);
+    margin-left: -$grid_column_gutter / 2;
+    margin-right: -$grid_column_gutter / 2;
 }
 
 .columns {
+    max-width: 100%;
     flex-basis: 100%;
     flex-grow: 0;
     padding-right: $grid_column_gutter / 2;
     padding-left: $grid_column_gutter / 2;
 }
 
-@each $name,
-$breakpoint in $grid_breakpoints {
+@each $name, $breakpoint in $grid_breakpoints {
     @include breakpoint($breakpoint) {
         @for $i from 1 through $grid_column_count {
             .columns.#{$name}-#{$i} {
