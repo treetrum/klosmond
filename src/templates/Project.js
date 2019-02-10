@@ -26,8 +26,12 @@ const Project = ({ data }) => {
 						</div>
 						{images && (
 							<div className="small-12 medium-8 columns image-col">
-								{images.map(({ childImageSharp, id }) => (
-									<Img key={id} fluid={childImageSharp.fluid} />
+								{images.map(({ childImageSharp, id }, index) => (
+									<Img
+										key={id}
+										fluid={childImageSharp.fluid}
+										backgroundColor={index % 2 === 0 ? '#FFECE8' : '#FFFFFF'}
+									/>
 								))}
 							</div>
 						)}

@@ -11,7 +11,7 @@ const About = ({ data }) => {
 			<ContentPage title="About" hideTitle>
 				<div className="row">
 					<div className="medium-6 large-4 columns">
-						<Img fluid={data.file.childImageSharp.fluid} />
+						<Img fluid={data.file.childImageSharp.fluid} backgroundColor="#FFECE8" />
 					</div>
 					<div className="medium-6 large-4 columns">
 						<article>
@@ -45,7 +45,7 @@ export const query = graphql`
 		file(relativePath: { eq: "about.jpg" }) {
 			childImageSharp {
 				fluid(maxWidth: 700, quality: 70) {
-					...GatsbyImageSharpFluid
+					...GatsbyImageSharpFluid_noBase64
 				}
 			}
 		}

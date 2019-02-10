@@ -33,7 +33,7 @@ export const indexQuery = graphql`
 						thumbnail {
 							childImageSharp {
 								fluid(maxWidth: 700, quality: 70) {
-									...GatsbyImageSharpFluid
+									...GatsbyImageSharpFluid_noBase64
 								}
 							}
 						}

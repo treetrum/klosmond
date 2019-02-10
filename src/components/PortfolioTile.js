@@ -8,8 +8,7 @@ const ProjectTile = ({ project }) => {
 	return (
 		<Link to={`/${slug}`} className="portfolio-tile">
 			<div className="portfolio-tile__thumb">
-				<Img fluid={thumbnail.childImageSharp.fluid} />
-				<img src={thumbURL} alt="" />
+				<Img fluid={thumbnail.childImageSharp.fluid} backgroundColor="#FFECE8" />
 			</div>
 			<p className="link-text">{title}</p>
 		</Link>
