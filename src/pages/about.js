@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import ContentPage from '../templates/ContentPage';
 
-import portrait from '../images/portrait.jpg';
+import portrait from '../images/about.jpg';
 
 const About = () => (
 	<Layout>
