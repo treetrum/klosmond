@@ -5,7 +5,7 @@ import PortfolioTile from '../components/PortfolioTile';
 import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => {
-	const projects = data.allMarkdownRemark.edges.map(({ node }) => node);
+	const projects = data.allPrismicProjects.edges.map(({ node }) => node);
 	return (
 		<Layout>
 			<main className="portfolio-grid">
@@ -23,17 +23,18 @@ const IndexPage = ({ data }) => {
 
 export const indexQuery = graphql`
 	query IndexQuery {
-		allMarkdownRemark(sort: { fields: frontmatter___order }) {
+		allPrismicProjects {
 			edges {
 				node {
-					frontmatter {
+					slugs
+					data {
 						title
-						slug
-						order
 						thumbnail {
-							childImageSharp {
-								fluid(maxWidth: 700, quality: 70) {
-									...GatsbyImageSharpFluid_noBase64
+							localFile {
+								childImageSharp {
+									fluid(maxWidth: 700, quality: 70) {
+										...GatsbyImageSharpFluid_noBase64
+									}
 								}
 							}
 						}

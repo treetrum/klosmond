@@ -5,8 +5,7 @@ import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 
 const Project = ({ data }) => {
-	const project = data.markdownRemark;
-	const { title, tag, images } = project.frontmatter;
+	const { title, tag, images, content } = data.prismicProjects.data;
 	return (
 		<Layout>
 			<Helmet>
@@ -21,18 +20,20 @@ const Project = ({ data }) => {
 							<article>
 								<h1 className="priority-1">{title}</h1>
 								<p className="tag">{`// ${tag}`}</p>
-								<div className="rte" dangerouslySetInnerHTML={{ __html: project.html }} />
+								<div className="rte" dangerouslySetInnerHTML={{ __html: content.html }} />
 							</article>
 						</div>
 						{images && (
 							<div className="small-12 medium-8 columns image-col">
-								{images.map(({ childImageSharp, id }, index) => (
-									<Img
-										key={id}
-										fluid={childImageSharp.fluid}
-										backgroundColor={index % 2 === 0 ? '#FFECE8' : '#FFFFFF'}
-									/>
-								))}
+								{images
+									.map(i => i.image.localFile)
+									.map(({ childImageSharp, id }, index) => (
+										<Img
+											key={id}
+											fluid={childImageSharp.fluid}
+											backgroundColor={index % 2 === 0 ? '#FFECE8' : '#FFFFFF'}
+										/>
+									))}
 							</div>
 						)}
 					</div>
@@ -43,18 +44,22 @@ const Project = ({ data }) => {
 };
 
 export const singleProjectQuery = graphql`
-	query ProjectByPath($slug: String!) {
-		markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-			html
-			frontmatter {
-				slug
+	query ProjectByPath($prismicId: String!) {
+		prismicProjects(prismicId: { eq: $prismicId }) {
+			data {
 				title
 				tag
+				content {
+					html
+				}
 				images {
-					id
-					childImageSharp {
-						fluid(maxWidth: 1560, quality: 70) {
-							...GatsbyImageSharpFluid
+					image {
+						localFile {
+							childImageSharp {
+								fluid(maxWidth: 1560, quality: 70) {
+									...GatsbyImageSharpFluid
+								}
+							}
 						}
 					}
 				}
