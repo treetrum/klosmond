@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
 
 export const indexQuery = graphql`
 	query IndexQuery {
-		allPrismicProjects {
+		allPrismicProjects(sort: { fields: data___order, order: ASC }) {
 			edges {
 				node {
 					slugs
